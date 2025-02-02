@@ -1,4 +1,4 @@
-package com.techbydev.pojo;
+package com.techbydev.model;
 
 public class ProjectPojo {
 	public ProjectPojo(String id, String name, String description) {

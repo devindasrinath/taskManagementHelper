@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.techbydev.dao.UsersDao;
-import com.techbydev.pojo.UserPojo;
+import com.techbydev.model.UserPojo;
 
 /**
  * Servlet implementation class RegisterNewUserServlet

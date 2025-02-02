@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-import com.techbydev.pojo.UserProjectBindingPojo;
+import com.techbydev.model.UserProjectBindingPojo;
 
 public class UserProjectDao extends CommonDao{
 	public UserProjectDao() {

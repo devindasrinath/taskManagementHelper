@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.techbydev.pojo.ProjectPojo;
+import com.techbydev.model.ProjectPojo;
 
 public class ProjectsDao extends CommonDao{
 	public ProjectsDao() {

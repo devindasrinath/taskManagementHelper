@@ -15,8 +15,8 @@ import javax.servlet.http.HttpSession;
 
 import com.techbydev.dao.TasksDao;
 import com.techbydev.dao.UsersDao;
-import com.techbydev.pojo.TaskPojo;
-import com.techbydev.pojo.UserPublicPojo;
+import com.techbydev.model.TaskPojo;
+import com.techbydev.model.UserPublicPojo;
 
 /**
  * Servlet implementation class taskServlet

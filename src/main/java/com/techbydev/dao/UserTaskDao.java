@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-import com.techbydev.pojo.UserTaskBindingPojo;
+import com.techbydev.model.UserTaskBindingPojo;
 
 public class UserTaskDao extends CommonDao{
 	public UserTaskDao() {

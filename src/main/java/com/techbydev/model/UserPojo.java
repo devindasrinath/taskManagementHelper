@@ -1,22 +1,21 @@
-package com.techbydev.pojo;
+package com.techbydev.model;
 
-
-import java.sql.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class UserPublicPojo {
+public class UserPojo {
 	private String id;
 	private String name;
+	private String password;
 	private ArrayList<String> roles;
-	
-	public UserPublicPojo(String id, String name, Array roles) throws SQLException {
+
+	public UserPojo(String id, String name, String password, ArrayList<String> roles) throws SQLException {
 		super();
 		this.id = id;
 		this.name = name;
-        this.roles = new ArrayList<>(Arrays.asList((String[])roles.getArray()));
-    
+		this.password = password;
+		this.roles = roles;
+
 	}
 
 	public String getId() {
@@ -30,10 +29,17 @@ public class UserPublicPojo {
 	public String getName() {
 		return name;
 	}
-	
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public ArrayList<String> getRoles() {
@@ -46,11 +52,7 @@ public class UserPublicPojo {
 
 	@Override
 	public String toString() {
-		return "UserPojo [id=" + id + ", name=" + name + ", roles=" + roles + "]";
+		return "UserPojo [id=" + id + ", name=" + name + ", password=" + password + ", roles=" + roles + "]";
 	}
-
-
-
-
 
 }

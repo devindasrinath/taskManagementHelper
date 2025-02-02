@@ -7,8 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Arrays;
-import com.techbydev.pojo.UserPojo;
-import com.techbydev.pojo.UserPublicPojo;
+
+import com.techbydev.model.UserPojo;
+import com.techbydev.model.UserPublicPojo;
 
 public class UsersDao extends CommonDao{
 	public UsersDao() {

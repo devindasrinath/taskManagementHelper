@@ -1,7 +1,7 @@
 package com.techbydev.services;
 
 import com.techbydev.dao.UsersDao;
-import com.techbydev.pojo.UserPojo;
+import com.techbydev.model.UserPojo;
 
 public class ValidateUser{
 	

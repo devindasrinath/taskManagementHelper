@@ -1,4 +1,4 @@
-package com.techbydev.pojo;
+package com.techbydev.model;
 
 
 public class UserTaskBindingPojo {

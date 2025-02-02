@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.techbydev.pojo.TaskPojo;
+import com.techbydev.model.TaskPojo;
 
 public class TasksDao extends CommonDao {
 	public TasksDao() {

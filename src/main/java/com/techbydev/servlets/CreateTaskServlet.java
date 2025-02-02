@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.techbydev.dao.TasksDao;
-import com.techbydev.pojo.TaskPojo;
+import com.techbydev.model.TaskPojo;
 
 /**
  * Servlet implementation class dashBoardServlet

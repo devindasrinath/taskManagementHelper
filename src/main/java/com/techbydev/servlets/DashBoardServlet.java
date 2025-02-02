@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.techbydev.dao.ProjectsDao;
-import com.techbydev.pojo.ProjectPojo;
+import com.techbydev.model.ProjectPojo;
 
 /**
  * Servlet implementation class prpjectsServlet

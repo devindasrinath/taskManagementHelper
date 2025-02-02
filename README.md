@@ -1,11 +1,13 @@
 
 # Task Manager Application
 
-This is a Task Manager Application built using Java Servlets and JSP. The application allows users to create project tasks, assign them to users, and manage task statuses. The architecture is based on the **MVC (Model-View-Controller)** pattern, providing a clear separation of concerns and ensuring easy maintenance and scalability.
+This is a Task Manager Application built using Java Servlets and JSP. The application allows users to create projects and tasks, assign them to users, and manage task statuses. The architecture is based on the **MVC (Model-View-Controller)** pattern, providing a clear separation of concerns and ensuring easy maintenance and scalability.
 
 ## Features
+- Create users
+- Create projects
 - Create and manage project tasks.
-- Assign tasks to users.
+- Assign projects and tasks to users.
 - Validate input using service layer.
 - Persistent data storage using PostgreSQL database.
 
@@ -39,37 +41,38 @@ The PostgreSQL database is managed with Docker. The necessary database schema sc
 ### Prerequisites:
 - JDK 8 or higher
 - Apache Tomcat
-- PostgreSQL
+- pgAdmin (optional)
 - Docker (for setting up the database)
 
 ### Steps to Run:
 1. Clone the repository to your local machine.
 2. Compile the project using Maven or your preferred build tool.
 3. Deploy the WAR file to your Tomcat server.
-4. Access the application through `http://localhost:8080/taskmanager`.
+4. Access the application through `http://localhost:8080/taskManagementHelper/home`.
 
 ### Running the Docker PostgreSQL Container:
 1. Run the following command in the terminal to start the database:
    ```bash
    docker-compose up
    ```
-2. The database will be available at `localhost:5432`.
+2. The database will be available at `localhost:5433`(you can change the port by changing the docker-compose file and config.property file).
 
 ## Directory Structure
 
 ```
-/src
-    /com
-        /yourcompany
-            /model (POJOs)
-            /dao (DAO layer for DB operations)
-            /service (Service layer for business logic and validations)
-            /controller (Servlets)
-            /filter (Filters for requests)
-            /view (JSP pages for the UI)
+/src/main/java
+    /com/techbydev
+        /model (POJOs)
+        /dao (DAO layer for DB operations)
+        /services (Service layer for business logic and validations)
+        /servlets (Servlets)
+        /filter (Filters for requests)
+        /utils (Configuration loads)
     /resources
         - docker-compose.yml (for setting up PostgreSQL)
         - db_script.sql (Database schema script)
+        - config.properties (project global configurations)
+    /webapp (include jsp files)
 ```
 
 ## License
