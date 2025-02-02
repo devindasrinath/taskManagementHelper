@@ -75,12 +75,12 @@
 		<jsp-file>/createTask.jsp</jsp-file>
 	</servlet>
 	<servlet>
-		<servlet-name>assignTaskPage</servlet-name>
-		<jsp-file>/assignTask.jsp</jsp-file>
-	</servlet>
-	<servlet>
 		<servlet-name>assignProjectPage</servlet-name>
 		<jsp-file>/assignProject.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>registerUserPage</servlet-name>
+		<jsp-file>/createUser.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>homePage</servlet-name>
@@ -103,11 +103,11 @@
 		<url-pattern>/createTask</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>assignTaskPage</servlet-name>
-		<url-pattern>/assignTask</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
 		<servlet-name>assignProjectPage</servlet-name>
 		<url-pattern>/assignProject</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>registerUserPage</servlet-name>
+		<url-pattern>/register</url-pattern>
 	</servlet-mapping>
 </web-app>

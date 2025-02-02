@@ -1,9 +1,9 @@
 package com.techbydev.pojo;
 
 public class UserProjectBindingPojo {
-	String id;
-	String userid;
-	String projectId;
+	private String id;
+	private String userid;
+	private String projectId;
 
 
 	public UserProjectBindingPojo(String id, String userid, String projectId) {

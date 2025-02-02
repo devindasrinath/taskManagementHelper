@@ -2,9 +2,9 @@ package com.techbydev.pojo;
 
 
 public class UserTaskBindingPojo {
-	String id;
-	String userId;
-	String taskId;
+	private String id;
+	private String userId;
+	private String taskId;
 	
 	public UserTaskBindingPojo(String id, String userId, String taskId) {
 		super();

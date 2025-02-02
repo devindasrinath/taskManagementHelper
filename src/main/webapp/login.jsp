@@ -125,8 +125,7 @@ p {
 				type="submit" value="Login" />
 		</form>
 		<p>
-			<a href="/taskManagementHelper/forgotPassword.jsp">Forgot
-				Password?</a>
+			<a href="/taskManagementHelper/register">New User? Register now</a>
 		</p>
 	</div>
 </body>

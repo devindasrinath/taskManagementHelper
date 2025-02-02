@@ -6,10 +6,10 @@ import java.sql.PreparedStatement;
 
 import com.techbydev.pojo.UserTaskBindingPojo;
 
-public class UserTaskDao {
-	String url = "jdbc:postgresql://localhost:5432/taskManager";
-	String username = "postgres";
-	String password = "admin";
+public class UserTaskDao extends CommonDao{
+	public UserTaskDao() {
+		super();
+	}
 
 	public int assignTask(UserTaskBindingPojo userTaskBindingPojo) {
 		try {
@@ -30,5 +30,24 @@ public class UserTaskDao {
 		return -1;
 
 	}
+	
+	public int unassignTask(UserTaskBindingPojo userTaskBindingPojo) {
+		try {
+			Class.forName("org.postgresql.Driver");
+			Connection con = DriverManager.getConnection(url, username, password);
+			PreparedStatement st = con.prepareStatement(
+					"DELETE FROM tasks_user_mapping WHERE task_id=?  AND user_id=?");
+			st.setInt(1, Integer.parseInt(userTaskBindingPojo.getTaskId()));
+			st.setInt(2, Integer.parseInt(userTaskBindingPojo.getUserId()));
+			int rs = st.executeUpdate();
+			con.close();
+			return rs;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return -1;
 
+	}
+	
+	
 }

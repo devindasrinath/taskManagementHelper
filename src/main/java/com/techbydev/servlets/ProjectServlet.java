@@ -2,6 +2,8 @@ package com.techbydev.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.techbydev.dao.TasksDao;
+import com.techbydev.dao.UsersDao;
 import com.techbydev.pojo.TaskPojo;
+import com.techbydev.pojo.UserPublicPojo;
 
 /**
  * Servlet implementation class taskServlet
@@ -33,11 +37,28 @@ public class ProjectServlet extends HttpServlet {
 
 		ArrayList<TaskPojo> tasks;
 		TasksDao tasksDao = new TasksDao();
-		tasks = (boolean) session.getAttribute("isAdmin") ? tasksDao.getAllTasks()
+		tasks = (boolean) session.getAttribute("isAdmin") ? tasksDao.getAllTasks(projectId)
 				: tasksDao.getTasksByUserId(userId, projectId);
+		UsersDao usersDao = new UsersDao();
+		ArrayList<UserPublicPojo> assignedUsers = usersDao.getUsersByprojectId(projectId);
+		request.setAttribute("assignedUsers", assignedUsers);
 		request.setAttribute("userTasks", tasks);
-		session.setAttribute("projectId", projectId);
+		request.setAttribute("projectId", projectId);
+		
+		ArrayList<UserPublicPojo> allUsers = usersDao.getAllUsers();
+		Set<String> assignedIds = assignedUsers.stream()
+		        .map(UserPublicPojo::getId)
+		        .collect(Collectors.toSet());
 
+		ArrayList<UserPublicPojo> nominatedUserPublicPojos = new ArrayList<UserPublicPojo>();
+		for (UserPublicPojo user : allUsers) {
+		    if (!assignedIds.contains(user.getId())) {
+		    	nominatedUserPublicPojos.add(user);
+		    }
+		}
+
+		request.setAttribute("selectedUsers", nominatedUserPublicPojos);
+		
 		RequestDispatcher nextDispatcher = request.getRequestDispatcher("/project.jsp");
 		nextDispatcher.forward(request, response);
 

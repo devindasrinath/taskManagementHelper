@@ -8,9 +8,9 @@ public class ProjectPojo {
 		this.description = description;
 	}
 
-	String id;
-	String name;
-	public String description;
+	private String id;
+	private String name;
+	private String description;
 
 	public String getId() {
 		return id;

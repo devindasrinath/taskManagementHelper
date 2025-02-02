@@ -18,16 +18,19 @@ public class CreateTaskServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			String taskName = request.getParameter("taskName");
-			String tasktDesc = request.getParameter("taskDescription");
-			String projectId = request.getParameter("projectId");
-			TasksDao taskDao = new TasksDao();
-			taskDao.addTask(new TaskPojo(null, taskName, tasktDesc, projectId));
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String taskName = request.getParameter("taskName");
+		String tasktDesc = request.getParameter("taskDescription");
+		String taskEst = request.getParameter("taskEstimation");
+		String projectId = request.getParameter("projectId");
+		TasksDao taskDao = new TasksDao();
+		taskDao.addTask(new TaskPojo(null, taskName, tasktDesc, taskEst, null, projectId));
 
-			response.sendRedirect("/taskManagementHelper/project?id="+projectId);
+		response.sendRedirect("/taskManagementHelper/project?id=" + projectId);
 	}
 
 }

@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 import com.techbydev.pojo.ProjectPojo;
 
-public class ProjectsDao {
-	String url = "jdbc:postgresql://localhost:5432/taskManager";
-	String username = "postgres";
-	String password = "admin";
+public class ProjectsDao extends CommonDao{
+	public ProjectsDao() {
+		super();
+	}
 
 	public int addProject(ProjectPojo project) {
 		try {
@@ -20,6 +20,22 @@ public class ProjectsDao {
 			PreparedStatement st = con.prepareStatement("INSERT INTO projects(name,description) VALUES(?,?)");
 			st.setString(1, project.getName());
 			st.setString(2, project.getdescription());
+			int res = st.executeUpdate();
+			con.close();
+			return res;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return 0;
+
+	}
+	
+	public int deleteProject(String projectId) {
+		try {
+			Class.forName("org.postgresql.Driver");
+			Connection con = DriverManager.getConnection(url, username, password);
+			PreparedStatement st = con.prepareStatement("DELETE FROM projects WHERE id=?");
+			st.setInt(1, Integer.parseInt(projectId));
 			int res = st.executeUpdate();
 			con.close();
 			return res;
@@ -104,5 +120,6 @@ public class ProjectsDao {
 		return null;
 
 	}
+	
 
 }
