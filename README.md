@@ -55,7 +55,7 @@ The PostgreSQL database is managed with Docker. The necessary database schema sc
    ```bash
    docker-compose up
    ```
-2. The database will be available at `localhost:5433`(you can change the port by changing the docker-compose file and config.property file).
+2. The database will be available at `localhost:5433`(you can change the port by changing the port in the docker-compose file and config.property file).
 
 ## Directory Structure
 
