@@ -1,7 +1,7 @@
 
-# Task Manager Application
+# Task Management Helper Application
 
-This is a Task Manager Application built using Java Servlets and JSP. The application allows users to create projects and tasks, assign them to users, and manage task statuses. The architecture is based on the **MVC (Model-View-Controller)** pattern, providing a clear separation of concerns and ensuring easy maintenance and scalability.
+This is a Task Management Helper Application built using Java Servlets and JSP. The application allows users to create projects and tasks, assign them to users, and manage task statuses. The architecture is based on the **MVC (Model-View-Controller)** pattern, providing a clear separation of concerns and ensuring easy maintenance and scalability.
 
 ## Features
 - Create users
